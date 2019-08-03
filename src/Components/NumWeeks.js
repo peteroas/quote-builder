@@ -3,18 +3,20 @@ import React from "react";
 class NumWeeks extends React.Component {
   constructor(props) {
     super(props);
-    this.submitHandler = this.submitHandler.bind(this);
+    this.numWeeksHandler = this.numWeeksHandler.bind(this);
     this.state = {
       localNumWeeks: ""
     };
   }
 
   numWeeksHandler = e => {
+    e.preventDefault();
     this.setState({ localNumWeeks: e.target.value });
+    const numWeeks = this.state.localNumWeeks;
+    this.props.setNumWeeksHandler(numWeeks);
   };
 
   submitHandler = e => {
-    e.preventDefault();
     const numWeeks = this.state.localNumWeeks;
     this.props.setNumWeeksHandler(numWeeks);
   };
@@ -33,9 +35,6 @@ class NumWeeks extends React.Component {
             />
           </label>
         </div>
-        <button className="ui button" onClick={this.submitHandler}>
-          Submit
-        </button>
       </form>
     );
   }

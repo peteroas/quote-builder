@@ -3,21 +3,20 @@ import React from "react";
 class HourlyRate extends React.Component {
   constructor(props) {
     super(props);
-    this.submitHandler = this.submitHandler.bind(this);
+    this.hourlyRateHandler = this.hourlyRateHandler.bind(this);
     this.state = {
       localHourlyRate: ""
     };
   }
 
   hourlyRateHandler = e => {
-    this.setState({ localHourlyRate: e.target.value });
-  };
-
-  submitHandler = e => {
     e.preventDefault();
+    this.setState({ localHourlyRate: e.target.value });
     const rate = this.state.localHourlyRate;
     this.props.setHourlyRateHandler(rate);
   };
+
+  submitHandler = e => {};
 
   render() {
     return (
@@ -33,9 +32,6 @@ class HourlyRate extends React.Component {
             />
           </label>
         </div>
-        <button className="ui button" onClick={this.submitHandler}>
-          Submit
-        </button>
       </form>
     );
   }

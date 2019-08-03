@@ -9,6 +9,11 @@ import NumWeeks from "./Components/NumWeeks";
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.personAddedHandler = this.personAddedHandler.bind(this);
+    this.setHourlyRateHandler = this.setHourlyRateHandler.bind(this);
+    this.setNumWeeksHandler = this.setNumWeeksHandler.bind(this);
+
     this.state = {
       people: [
         { name: "Peter", hoursWorked: 40 },
@@ -17,9 +22,6 @@ class App extends React.Component {
       hourlyRate: 0,
       numWeeks: 0
     };
-    this.personAddedHandler = this.personAddedHandler.bind(this);
-    this.setHourlyRateHandler = this.setHourlyRateHandler.bind(this);
-    this.setNumWeeksHandler = this.setNumWeeksHandler.bind(this);
   }
 
   personAddedHandler(person) {

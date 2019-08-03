@@ -9,8 +9,8 @@ class personTable extends React.Component {
   render() {
     const people = this.props.people.map((person, key) => (
       <tr key={key}>
-        <td data-label="Name">{person.name}</td>
-        <td data-label="hoursWorked">{person.hoursWorked}</td>
+        <td>{person.name}</td>
+        <td>{person.hoursWorked}</td>
       </tr>
     ));
 
@@ -29,26 +29,3 @@ class personTable extends React.Component {
 }
 
 export default personTable;
-
-// function personTable(props) {
-//   const listPeople = props.people.map((person, key) => (
-//     <tr key={key}>
-//       <td data-label="Name">{person.name}</td>
-//       <td data-label="hoursWorked">{person.hoursWorked}</td>
-//     </tr>
-//   ));
-
-//   return (
-//     <table className="ui celled table">
-//       <thead>
-//         <tr>
-//           <th>Name</th>
-//           <th>Hours Per Week</th>
-//         </tr>
-//       </thead>
-//       <tbody>{listPeople}</tbody>
-//     </table>
-//   );
-// }
-
-// export default personTable;
